@@ -5,18 +5,14 @@
  * Contributors: https://github.com/107-systems/107-Arduino-UAVCAN/graphs/contributors.
  */
 
-#ifndef ARDUINO_UAVCAN_TYPES_H_
-#define ARDUINO_UAVCAN_TYPES_H_
+#ifndef ARDUINO_TRANSFER_UAVCAN_NODE_EXECUTE_COMMAND_1_1_H_
+#define ARDUINO_TRANSFER_UAVCAN_NODE_EXECUTE_COMMAND_1_1_H_
 
 /**************************************************************************************
  * INCLUDE
  **************************************************************************************/
 
-#include "types/uavcan/node/ExecuteCommand.1.0.h"
-#include "types/uavcan/node/ExecuteCommand.1.1.h"
-#include "types/uavcan/node/GetInfo.1.0.h"
-#include "types/uavcan/node/Heartbeat.1.0.h"
-#include "types/uavcan/node/ID.1.0.hpp"
-#include "types/uavcan/node/Version.1.0.h"
+#include "ExecuteCommand.1.1.Request.h"
+#include "ExecuteCommand.1.1.Response.h"
 
-#endif /* ARDUINO_UAVCAN_TYPES_H_ */
+#endif /* ARDUINO_TRANSFER_UAVCAN_NODE_EXECUTE_COMMAND_1_1_H_ */
