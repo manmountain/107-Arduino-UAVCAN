@@ -103,7 +103,7 @@ void setup()
   /* Subscribe to incoming get info requests */
   uavcan.subscribe<GetInfo_1_0::Request>(onGetInfo_1_0_Request_Received);
   /* Subscribe to incoming service requests */
-  uavcan.subscribe<ExecuteCommand_1_0::Request>(onExecuteCommand_1_1_Request_Received);
+  uavcan.subscribe<ExecuteCommand_1_1::Request>(onExecuteCommand_1_1_Request_Received);
 }
 
 void loop()
@@ -193,11 +193,9 @@ void onExecuteCommand_1_1_Request_Received(CanardTransfer const & transfer, Ardu
         Serial.print("Command 0xCAFE with parameter: ");
         Serial.write(req.data.parameter.elements, req.data.parameter.count);
         Serial.println(" received");
-        ExecuteCommand_1_1::Response rsp;
         rsp = ExecuteCommand_1_1::Response::Status::SUCCESS;
         uavcan.respond(rsp, transfer.remote_node_id, transfer.transfer_id);
       } else {
-        ExecuteCommand_1_1::Response rsp;
         rsp = ExecuteCommand_1_1::Response::Status::NOT_AUTHORIZED;
         uavcan.respond(rsp, transfer.remote_node_id, transfer.transfer_id);
       }
